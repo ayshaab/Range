@@ -18,102 +18,43 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of _range_, which contains the "range" function, is to provide a more convenient way to calculate the difference between the largest and smallest number in a numerical vector.
+The goal of range is to ...
 
 ## Installation
 
 You can install the released version of range from [CRAN](https://CRAN.R-project.org) with:
 
-```{r}
-devtools::install_github("ayshaab/range")
+``` r
+install.packages("range")
 ```
 
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("ayshaab/Range")
+```
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(range)
-range(1:10)
+## basic example code
 ```
 
-## How each part of this R package was made
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-To initially create a new file path for the _range_ package (.Rproj.user folder, R folder, NAMESPACE file and DESCRIPTION file):
-
-```{r}
-library(devtools) #I first loaded the devtools package
-create_package("~/Desktop/range")
+```{r cars}
+summary(cars)
 ```
 
-Then I initialized the range package to a git repository:
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
 
-```{r}
-library(devtools) #I first loaded the devtools package
-use_git()
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
 ```
 
-I wrote my r function which will appear as a range.R file within the R folder of this package:
-
-```{r}
-library(devtools) #I first loaded the devtools package
-use_r("range")
-
-#Within this newly created file, I wrote my function and loaded this function using:
-load_all() 
-#Checked that all the files created so far is correct using:
-check()
-```
-
-To edit the description file I manually changed the following lines:
-1) Title
-2) Person (i.e. first and last name, and email)
-3) Description
-4) License
-```{r}
-#To change the license
-use_mit_license("Aysha Allard Brown")
-#The new output should now be MIT + file LICENSE and a new LICENSE.md file should have been created
-```
-
-To make an R documentation file for the range function:
-
-```{r}
-library(roxygen2)
-#Then code> insert Roxygen skeleton 
-#To render this documentation
-document()
-```
-
-For my package to include tests:
-
-```{r}
-library(devtools) #I first loaded the devtools package
-use_testthat()
-#To initialize a basic test file and open it for editing
-use_test("range")
-```
-
-To depend on the purrr package (to add purrr to the Imports field in the DESCRIPTION file:
-
-```{r}
-use_package("purrr")
-document() #Run this and run test() to make sure everything's working fine
-```
-
-
-To build this README.Rmd file:
-
-```{r}
-library(devtools) #I first loaded the devtools package
-use_readme_rmd()
-#Then I built my READMe.Rmd file
-build_readme()
-```
-
-To make a vignette:
-```{r}
-use_vignette("range")
-#Then I built my vignette
-build_vignettes()
-```
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
