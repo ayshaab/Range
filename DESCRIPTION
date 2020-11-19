@@ -1,16 +1,22 @@
 Package: range
-Title: What the Package Does (One Line, Title Case)
+Title: A function to calculate the max minus the min of a numerical vector
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Aysha",
+           family = "Allard Brown",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "ayshaab@student.ubc.ca",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: The goal of range is to determine that the max minus the min is for a numerical vector.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+Imports: 
+    purrr
+VignetteBuilder: knitr
